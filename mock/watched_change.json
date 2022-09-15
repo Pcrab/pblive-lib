@@ -1,0 +1,8 @@
+{
+    "cmd": "WATCHED_CHANGE",
+    "data": {
+        "num": 500,
+        "text_small": "500",
+        "text_large": "500人看过"
+    }
+}

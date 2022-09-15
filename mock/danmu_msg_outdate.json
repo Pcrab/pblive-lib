@@ -1,0 +1,57 @@
+{
+    "cmd": "DANMU_MSG",
+    "info": [
+        [
+            0,
+            1,
+            25,
+            16777215,
+            1663220459441,
+            1663220056,
+            0,
+            "9da30d16",
+            0,
+            0,
+            0,
+            "",
+            0,
+            "{}",
+            "{}",
+            {
+                "mode": 0,
+                "show_player_type": 0,
+                "extra": "{\"send_from_me\":false,\"mode\":0,\"color\":16777215,\"dm_type\":0,\"font_size\":25,\"player_mode\":1,\"show_player_type\":0,\"content\":\"xs\",\"user_hash\":\"2644708630\",\"emoticon_unique\":\"\",\"bulge_display\":0,\"recommend_score\":0,\"main_state_dm_color\":\"\",\"objective_state_dm_color\":\"\",\"direction\":0,\"pk_direction\":0,\"quartet_direction\":0,\"anniversary_crowd\":0,\"yeah_space_type\":\"\",\"yeah_space_url\":\"\",\"jump_to_url\":\"\",\"space_type\":\"\",\"space_url\":\"\"}"
+            },
+            { "activity_identity": "", "activity_source": 0, "not_show": 0 }
+        ],
+        "xs",
+        [22303314, "Pcrab", 0, 0, 0, 10000, 1, ""],
+        [
+            13,
+            "光水晶",
+            "绫濑光Official",
+            3428783,
+            12478086,
+            "",
+            0,
+            12632256,
+            12632256,
+            12632256,
+            0,
+            0,
+            6747203
+        ],
+        [17, 0, 6406234, ">50000", 0],
+        ["", ""],
+        0,
+        0,
+        null,
+        { "ts": 1663220459, "ct": "8A004816" },
+        0,
+        0,
+        null,
+        null,
+        0,
+        42
+    ]
+}
