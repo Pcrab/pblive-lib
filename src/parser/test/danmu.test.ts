@@ -1,11 +1,7 @@
-import { intToHex, parseDanmu } from "../danmu";
+import { parseDanmu } from "../danmu";
 import danmu from "../../../mock/danmu_msg_biaoqing.json";
 import { DanmuRaw } from "../../types";
 describe("DANMU_MSG", () => {
-    test("intToHex", () => {
-        expect(intToHex(1)).toEqual("#000001");
-    });
-
     test("parse", () => {
         expect(parseDanmu(danmu as DanmuRaw)).toEqual({
             user: {

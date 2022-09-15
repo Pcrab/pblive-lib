@@ -1,6 +1,6 @@
 import { KeepLiveTCP } from "bilibili-live-ws";
 import parser from "./parser";
-import { DanmuRaw, MsgHandlers } from "./types";
+import { DanmuRaw, InteractWordRaw, MsgHandlers } from "./types";
 
 const open = (roomId: number, handlers: MsgHandlers): void => {
     const live = new KeepLiveTCP(roomId);
@@ -12,7 +12,7 @@ const open = (roomId: number, handlers: MsgHandlers): void => {
         handlers.onDanmuMsg?.(parser.parseDanmu(danmu));
     });
 
-    live.on("INTERACT_WORD", (interactWord: Record<string, unknown>) => {
+    live.on("INTERACT_WORD", (interactWord: InteractWordRaw) => {
         handlers.onInteractWord?.(parser.parseInteractWord(interactWord));
     });
 

@@ -1,24 +1,32 @@
-interface User {
+interface BaseBadge {
+    isActive: boolean;
+    name: string;
+    color: string;
+    level: number;
+}
+
+interface DanmuBadge extends BaseBadge {
+    anchor: {
+        uid: number;
+        username: string;
+        roomId: number;
+    };
+}
+
+interface Identity {
+    rank: number;
+    member: number;
+    isAdmin: boolean;
+}
+
+interface BaseUser {
     uid: number;
     username: string;
-    badge:
-        | {
-              isActive: boolean;
-              name: string;
-              color: string;
-              level: number;
-              anchor: {
-                  uid: number;
-                  username: string;
-                  roomId: number;
-              };
-          }
-        | undefined;
-    identity: {
-        rank: number;
-        member: number;
-        isAdmin: boolean;
-    };
+}
+
+interface DanmuUser extends BaseUser {
+    badge: DanmuBadge | undefined;
+    identity: Identity;
 }
 
 export interface DanmuRaw {
@@ -87,7 +95,7 @@ export interface DanmuRaw {
 }
 
 export interface Danmu {
-    user: User;
+    user: DanmuUser;
     content: string;
     emoticon:
         | {
@@ -99,12 +107,57 @@ export interface Danmu {
         | undefined;
 }
 
+export interface InteractWordRaw {
+    cmd: "INTERACT_WORD";
+    data: {
+        contribution: {
+            grade: number;
+        };
+        dmscore: number;
+        fans_medal: {
+            anchor_roomid: number;
+            guard_level: number;
+            icon_id: number;
+            is_lighted: number;
+            medal_color: number;
+            medal_color_border: number;
+            medal_color_end: number;
+            medal_color_start: number;
+            medal_level: number;
+            medal_name: string;
+            score: number;
+            special: string;
+            target_id: number;
+        };
+        identities: [number, number];
+        is_spread: number;
+        msg_type: number;
+        privilege_type: number;
+        roomid: number;
+        score: number;
+        spread_desc: string;
+        spread_info: string;
+        tail_icon: number;
+        timestamp: number;
+        trigger_time: number;
+        uid: number;
+        uname: string;
+        uname_color: string;
+    };
+}
+
+interface InteractWordUser extends BaseUser {
+    badge: BaseBadge;
+}
+
 export interface InteractWord {
-    user: User;
+    user: InteractWordUser;
+    timestamp: number;
+    color: string;
 }
 
 export interface SendGift {
-    user: User;
+    user: DanmuUser;
 }
 
 export interface WatchedChange {
