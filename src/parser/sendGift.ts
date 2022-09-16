@@ -1,7 +1,22 @@
-import { SendGift } from "../types";
+import { SendGift, SendGiftRaw } from "../types";
+import { intToHex } from "../utils/intToHex";
 
-export const parseSendGift = (sendGift: Record<string, unknown>): SendGift => {
+export const parseSendGift = (sendGift: SendGiftRaw): SendGift => {
     return {
-        user: sendGift,
+        user: {
+            uid: sendGift.data.uid,
+            username: sendGift.data.uname,
+            badge: {
+                isActive: sendGift.data.medal_info.is_lighted === 1,
+                name: sendGift.data.medal_info.medal_name,
+                level: sendGift.data.medal_info.medal_level,
+                color: intToHex(sendGift.data.medal_info.medal_color),
+            },
+        },
+        id: sendGift.data.giftId,
+        name: sendGift.data.giftName,
+        count: sendGift.data.num,
+        price: sendGift.data.price,
+        url: sendGift.data.face,
     };
 };
