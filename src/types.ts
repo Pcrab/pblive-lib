@@ -57,7 +57,7 @@ export interface DanmuRaw {
             },
             Record<string, unknown>,
             Record<string, unknown>,
-            Record<string, unknown>
+            Record<string, unknown>,
         ],
         string,
         [number, string, number, number, number, number, number, string],
@@ -75,7 +75,7 @@ export interface DanmuRaw {
                   number,
                   number,
                   number,
-                  number
+                  number,
               ]
             | []
         ),
@@ -90,7 +90,7 @@ export interface DanmuRaw {
         null,
         null,
         number,
-        number
+        number,
     ];
 }
 
@@ -98,12 +98,12 @@ export interface Danmu {
     user: DanmuUser;
     content: string;
     emoticon:
-        |   {
-                id: string;
-                url: string;
-                height: number;
-                width: number;
-            }
+        | {
+              id: string;
+              url: string;
+              height: number;
+              width: number;
+          }
         | undefined;
 }
 
@@ -264,12 +264,12 @@ export interface SendGift {
 }
 
 export interface WatchedChangeRaw {
-    cmd: "WATCHED_CHANGE",
+    cmd: "WATCHED_CHANGE";
     data: {
         num: number;
-        text_small: string,
-        text_large: string
-    }
+        text_small: string;
+        text_large: string;
+    };
 }
 
 export interface WatchedChange {
@@ -277,7 +277,7 @@ export interface WatchedChange {
 }
 
 export interface HotRankChangedRaw {
-    cmd: "HOT_RANK_CHANGED_V2",
+    cmd: "HOT_RANK_CHANGED_V2";
     data: {
         rank: number;
         trend: number;
@@ -289,7 +289,7 @@ export interface HotRankChangedRaw {
         icon: string;
         area_name: string;
         rank_desc: string;
-    }
+    };
 }
 
 export interface HotRankChanged {

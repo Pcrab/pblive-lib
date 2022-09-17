@@ -5,6 +5,7 @@
     },
     "extends": [
         "eslint:recommended",
+        "plugin:prettier/recommended",
         // typescript-eslint 的推荐规则，只是这些最佳规则都是针对 TS 的
         "plugin:@typescript-eslint/recommended",
         // tsconfig.json 里 Type Checking 的推荐规则
@@ -19,63 +20,5 @@
     "plugins": [
         // 使用 typescript x eslint 的插件
         "@typescript-eslint"
-    ],
-    "rules": {
-        "array-callback-return": [
-            "error",
-            {
-                "allowImplicit": true,
-                "checkForEach": true
-            }
-        ],
-        "no-constant-binary-expression": "error",
-        "no-constructor-return": "error",
-        "no-duplicate-imports": [
-            "error",
-            {
-                "includeExports": true
-            }
-        ],
-        "no-self-compare": "error",
-        "no-template-curly-in-string": "error",
-        "camelcase": "error",
-        "default-case": "error",
-        "default-case-last": "error",
-        "eqeqeq": "error",
-        "max-lines": [
-            "error",
-            {
-                "skipComments": true,
-                "skipBlankLines": true
-            }
-        ],
-        "no-eval": "error",
-        "indent": [
-            "error",
-            4
-        ],
-        "comma-dangle": [
-            "error",
-            "never"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "max-len": [
-            "error",
-            {
-                "code": 120,
-                "ignoreTrailingComments": true,
-                "ignoreUrls": true,
-                "ignoreStrings": true,
-                "ignoreTemplateLiterals": true,
-                "ignoreRegExpLiterals": true
-            }
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ]
-    }
+    ]
 }

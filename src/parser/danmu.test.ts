@@ -16,37 +16,37 @@ describe("DANMU_MSG", () => {
                     anchor: {
                         uid: 6747203,
                         username: "绫濑光Official",
-                        roomId: 3428783
-                    }
+                        roomId: 3428783,
+                    },
                 },
                 identity: {
                     isAdmin: false,
                     member: 0,
-                    rank: 0
-                }
+                    rank: 0,
+                },
             },
             content: "赞",
             emoticon: {
                 id: "official_147",
                 height: 60,
                 width: 150,
-                url: "http://i0.hdslb.com/bfs/live/bbd9045570d0c022a984c637e406cb0e1f208aa9.png"
-            }
+                url: "http://i0.hdslb.com/bfs/live/bbd9045570d0c022a984c637e406cb0e1f208aa9.png",
+            },
         });
     });
     test("no badge", () => {
         expect(parseDanmu(danmuMsgNoBadge as DanmuRaw)).toEqual({
             content: "赞",
-            "user": {
-                "badge": undefined,
-                "identity": {
-                    "isAdmin": false,
-                    "member": 0,
-                    "rank": 0
+            user: {
+                badge: undefined,
+                identity: {
+                    isAdmin: false,
+                    member: 0,
+                    rank: 0,
                 },
-                "uid": 22303314,
-                "username": "Pcrab"
-            }
+                uid: 22303314,
+                username: "Pcrab",
+            },
         });
     });
 });

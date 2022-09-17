@@ -1,9 +1,9 @@
 import { WatchedChange, WatchedChangeRaw } from "../types.js";
 
 export const parseWatchedChange = (
-    watchedChange: WatchedChangeRaw
+    watchedChange: WatchedChangeRaw,
 ): WatchedChange => {
     return {
-        num: watchedChange.data.num
+        num: watchedChange.data.num,
     };
 };

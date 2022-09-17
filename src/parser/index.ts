@@ -9,5 +9,5 @@ export default {
     parseInteractWord,
     parseSendGift,
     parseWatchedChange,
-    parseHotRankChanged
+    parseHotRankChanged,
 };

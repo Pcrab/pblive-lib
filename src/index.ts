@@ -1,16 +1,22 @@
 import { KeepLiveTCP } from "bilibili-live-ws";
 import parser from "./parser/index.js";
-import { DanmuRaw, HotRankChangedRaw, InteractWordRaw, MsgHandlers, SendGiftRaw, WatchedChangeRaw } from "./types.js";
+import {
+    DanmuRaw,
+    HotRankChangedRaw,
+    InteractWordRaw,
+    MsgHandlers,
+    SendGiftRaw,
+    WatchedChangeRaw,
+} from "./types.js";
 
 const open = (roomId: number, handlers: MsgHandlers): void => {
     const live = new KeepLiveTCP(roomId);
     live.on("heartbeat", (count: number) => {
-        console.log(`count: ${count}`);
         handlers.onHeartBeat?.(count);
     });
 
     live.on("DANMU_MSG", (danmu: DanmuRaw) => {
-        console.log(JSON.stringify(danmu));
+        // console.log(JSON.stringify(danmu));
         handlers.onDanmuMsg?.(parser.parseDanmu(danmu));
     });
 
@@ -26,14 +32,9 @@ const open = (roomId: number, handlers: MsgHandlers): void => {
         handlers.onWatchedChange?.(parser.parseWatchedChange(watchedChange));
     });
 
-    live.on(
-        "HOT_RANK_CHANGED_V2",
-        (hotRankChanged: HotRankChangedRaw) => {
-            handlers.onHotRankChanged?.(
-                parser.parseHotRankChanged(hotRankChanged)
-            );
-        }
-    );
+    live.on("HOT_RANK_CHANGED_V2", (hotRankChanged: HotRankChangedRaw) => {
+        handlers.onHotRankChanged?.(parser.parseHotRankChanged(hotRankChanged));
+    });
 
     return;
 };
