@@ -13,6 +13,7 @@ describe("DANMU_MSG", () => {
                     level: 13,
                     name: "光水晶",
                     color: "#be6686",
+                    guard_level: 0,
                     anchor: {
                         uid: 6747203,
                         username: "绫濑光Official",
