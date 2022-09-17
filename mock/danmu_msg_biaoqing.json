@@ -30,10 +30,23 @@
         "show_player_type": 0,
         "extra": "{\"send_from_me\":false,\"mode\":0,\"color\":16777215,\"dm_type\":1,\"font_size\":25,\"player_mode\":1,\"show_player_type\":0,\"content\":\"赞\",\"user_hash\":\"2644708630\",\"emoticon_unique\":\"official_147\",\"bulge_display\":0,\"recommend_score\":10,\"main_state_dm_color\":\"\",\"objective_state_dm_color\":\"\",\"direction\":0,\"pk_direction\":0,\"quartet_direction\":0,\"anniversary_crowd\":0,\"yeah_space_type\":\"\",\"yeah_space_url\":\"\",\"jump_to_url\":\"\",\"space_type\":\"\",\"space_url\":\"\"}"
       },
-      { "activity_identity": "", "activity_source": 0, "not_show": 0 }
+      {
+        "activity_identity": "",
+        "activity_source": 0,
+        "not_show": 0
+      }
     ],
     "赞",
-    [22303314, "Pcrab", 0, 0, 0, 10000, 1, ""],
+    [
+      22303314,
+      "Pcrab",
+      0,
+      0,
+      0,
+      10000,
+      1,
+      ""
+    ],
     [
       13,
       "光水晶",
@@ -49,12 +62,24 @@
       0,
       6747203
     ],
-    [17, 0, 6406234, ">50000", 0],
-    ["", ""],
+    [
+      17,
+      0,
+      6406234,
+      ">50000",
+      0
+    ],
+    [
+      "",
+      ""
+    ],
     0,
     0,
     null,
-    { "ts": 1663229019, "ct": "85793E7E" },
+    {
+      "ts": 1663229019,
+      "ct": "85793E7E"
+    },
     0,
     0,
     null,

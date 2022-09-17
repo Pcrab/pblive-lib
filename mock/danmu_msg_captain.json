@@ -22,10 +22,23 @@
                 "show_player_type": 0,
                 "extra": "{\"send_from_me\":false,\"mode\":0,\"color\":14893055,\"dm_type\":0,\"font_size\":25,\"player_mode\":4,\"show_player_type\":0,\"content\":\"准确来说是手忙脚乱\",\"user_hash\":\"3426151182\",\"emoticon_unique\":\"\",\"bulge_display\":0,\"recommend_score\":10,\"main_state_dm_color\":\"\",\"objective_state_dm_color\":\"\",\"direction\":0,\"pk_direction\":0,\"quartet_direction\":0,\"anniversary_crowd\":0,\"yeah_space_type\":\"\",\"yeah_space_url\":\"\",\"jump_to_url\":\"\",\"space_type\":\"\",\"space_url\":\"\"}"
             },
-            { "activity_identity": "", "activity_source": 0, "not_show": 0 }
+            {
+                "activity_identity": "",
+                "activity_source": 0,
+                "not_show": 0
+            }
         ],
         "准确来说是手忙脚乱",
-        [14962079, "努力的月月酱", 0, 0, 0, 10000, 1, "#00D1F1"],
+        [
+            14962079,
+            "努力的月月酱",
+            0,
+            0,
+            0,
+            10000,
+            1,
+            "#00D1F1"
+        ],
         [
             22,
             "花儿呀",
@@ -41,12 +54,24 @@
             1,
             269415357
         ],
-        [11, 0, 6406234, ">50000", 0],
-        ["", ""],
+        [
+            11,
+            0,
+            6406234,
+            ">50000",
+            0
+        ],
+        [
+            "",
+            ""
+        ],
         0,
         3,
         null,
-        { "ts": 1663220257, "ct": "2320133A" },
+        {
+            "ts": 1663220257,
+            "ct": "2320133A"
+        },
         0,
         0,
         null,

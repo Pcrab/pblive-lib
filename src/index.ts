@@ -5,10 +5,12 @@ import { DanmuRaw, HotRankChangedRaw, InteractWordRaw, MsgHandlers, SendGiftRaw,
 const open = (roomId: number, handlers: MsgHandlers): void => {
     const live = new KeepLiveTCP(roomId);
     live.on("heartbeat", (count: number) => {
+        console.log(`count: ${count}`);
         handlers.onHeartBeat?.(count);
     });
 
     live.on("DANMU_MSG", (danmu: DanmuRaw) => {
+        console.log(JSON.stringify(danmu));
         handlers.onDanmuMsg?.(parser.parseDanmu(danmu));
     });
 
@@ -35,5 +37,7 @@ const open = (roomId: number, handlers: MsgHandlers): void => {
 
     return;
 };
+
+open(10360, {});
 
 export default open;
