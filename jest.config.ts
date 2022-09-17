@@ -5,6 +5,11 @@ const config: Config = {
     moduleNameMapper: {
         '^(\\.{1,2}/.*)\\.js$': '$1'
     },
+    testMatch: [
+        '**/__tests__/**/*.+(ts)',
+        '**/?(*.)+(spec|test).+(ts)'
+    ],
+    collectCoverage: true,
     transform: {
         '<regex_match_files': [
             'ts-jest',
