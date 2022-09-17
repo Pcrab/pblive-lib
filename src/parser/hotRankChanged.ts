@@ -1,9 +1,11 @@
-import { HotRankChanged } from "../types.js";
+import { HotRankChanged, HotRankChangedRaw } from "../types.js";
 
 export const parseHotRankChanged = (
-    hotRankChanged: Record<string, unknown>
+    hotRankChanged: HotRankChangedRaw
 ): HotRankChanged => {
     return {
-        rank: hotRankChanged.rank as number
+        rank: hotRankChanged.data.rank,
+        area: hotRankChanged.data.area_name,
+        icon: hotRankChanged.data.icon
     };
 };

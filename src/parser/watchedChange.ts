@@ -1,9 +1,9 @@
-import { WatchedChange } from "../types.js";
+import { WatchedChange, WatchedChangeRaw } from "../types.js";
 
 export const parseWatchedChange = (
-    watchedChange: Record<string, unknown>
+    watchedChange: WatchedChangeRaw
 ): WatchedChange => {
     return {
-        num: watchedChange.num as number
+        num: watchedChange.data.num
     };
 };

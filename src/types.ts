@@ -98,12 +98,12 @@ export interface Danmu {
     user: DanmuUser;
     content: string;
     emoticon:
-        | {
-              id: string;
-              url: string;
-              height: number;
-              width: number;
-          }
+        |   {
+                id: string;
+                url: string;
+                height: number;
+                width: number;
+            }
         | undefined;
 }
 
@@ -263,12 +263,39 @@ export interface SendGift {
     url: string;
 }
 
+export interface WatchedChangeRaw {
+    cmd: "WATCHED_CHANGE",
+    data: {
+        num: number;
+        text_small: string,
+        text_large: string
+    }
+}
+
 export interface WatchedChange {
     num: number;
 }
 
+export interface HotRankChangedRaw {
+    cmd: "HOT_RANK_CHANGED_V2",
+    data: {
+        rank: number;
+        trend: number;
+        countdown: number;
+        timestamp: number;
+        web_url: string;
+        live_url: string;
+        pc_link_url: string;
+        icon: string;
+        area_name: string;
+        rank_desc: string;
+    }
+}
+
 export interface HotRankChanged {
     rank: number;
+    area: string;
+    icon: string;
 }
 
 type MsgHandler<T> = (msg: T) => void;

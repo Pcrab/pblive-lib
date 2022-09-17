@@ -1,6 +1,6 @@
 import { KeepLiveTCP } from "bilibili-live-ws";
 import parser from "./parser/index.js";
-import { DanmuRaw, InteractWordRaw, MsgHandlers, SendGiftRaw } from "./types.js";
+import { DanmuRaw, HotRankChangedRaw, InteractWordRaw, MsgHandlers, SendGiftRaw, WatchedChangeRaw } from "./types.js";
 
 const open = (roomId: number, handlers: MsgHandlers): void => {
     const live = new KeepLiveTCP(roomId);
@@ -20,13 +20,13 @@ const open = (roomId: number, handlers: MsgHandlers): void => {
         handlers.onSendGift?.(parser.parseSendGift(sendGift));
     });
 
-    live.on("WATCHED_CHANGE", (watchedChange: Record<string, unknown>) => {
+    live.on("WATCHED_CHANGE", (watchedChange: WatchedChangeRaw) => {
         handlers.onWatchedChange?.(parser.parseWatchedChange(watchedChange));
     });
 
     live.on(
         "HOT_RANK_CHANGED_V2",
-        (hotRankChanged: Record<string, unknown>) => {
+        (hotRankChanged: HotRankChangedRaw) => {
             handlers.onHotRankChanged?.(
                 parser.parseHotRankChanged(hotRankChanged)
             );
