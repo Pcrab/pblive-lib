@@ -1,4 +1,4 @@
-import { intToHex } from "../intToHex";
+import { intToHex } from "../intToHex.js";
 
 describe("IntToHex", () => {
     test("intToHex", () => {
