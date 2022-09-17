@@ -9,6 +9,7 @@ export const parseInteractWord = (
             uid: interactWord.data.uid,
             username: interactWord.data.uname,
             badge: {
+                guard_level: interactWord.data.fans_medal.guard_level,
                 isActive: interactWord.data.fans_medal.is_lighted === 1,
                 name: interactWord.data.fans_medal.medal_name,
                 color: intToHex(interactWord.data.fans_medal.medal_color),

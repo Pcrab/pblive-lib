@@ -13,6 +13,7 @@ export const parseDanmu = (danmu: DanmuRaw): Danmu => {
                   username: danmu.info[3][2],
                   roomId: danmu.info[3][3],
               },
+              guard_level: danmu.info[7],
           }
         : undefined;
     const emoticon: Danmu["emoticon"] = danmu.info[0][13]?.emoticon_unique

@@ -3,6 +3,7 @@ interface BaseBadge {
     name: string;
     color: string;
     level: number;
+    guard_level: number;
 }
 
 interface DanmuBadge extends BaseBadge {
