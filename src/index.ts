@@ -1,6 +1,6 @@
 import { KeepLiveTCP } from "bilibili-live-ws";
-import parser from "./parser";
-import { DanmuRaw, InteractWordRaw, MsgHandlers, SendGiftRaw } from "./types";
+import parser from "./parser/index.js";
+import { DanmuRaw, InteractWordRaw, MsgHandlers, SendGiftRaw } from "./types.js";
 
 const open = (roomId: number, handlers: MsgHandlers): void => {
     const live = new KeepLiveTCP(roomId);

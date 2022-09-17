@@ -1,5 +1,5 @@
-import { SendGift, SendGiftRaw } from "../types";
-import { intToHex } from "../utils/intToHex";
+import { SendGift, SendGiftRaw } from "../types.js";
+import { intToHex } from "../utils/intToHex.js";
 
 export const parseSendGift = (sendGift: SendGiftRaw): SendGift => {
     return {
@@ -10,13 +10,13 @@ export const parseSendGift = (sendGift: SendGiftRaw): SendGift => {
                 isActive: sendGift.data.medal_info.is_lighted === 1,
                 name: sendGift.data.medal_info.medal_name,
                 level: sendGift.data.medal_info.medal_level,
-                color: intToHex(sendGift.data.medal_info.medal_color),
-            },
+                color: intToHex(sendGift.data.medal_info.medal_color)
+            }
         },
         id: sendGift.data.giftId,
         name: sendGift.data.giftName,
         count: sendGift.data.num,
         price: sendGift.data.price,
-        url: sendGift.data.face,
+        url: sendGift.data.face
     };
 };

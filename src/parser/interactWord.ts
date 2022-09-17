@@ -1,5 +1,5 @@
-import { InteractWord, InteractWordRaw } from "../types";
-import { intToHex } from "../utils/intToHex";
+import { InteractWord, InteractWordRaw } from "../types.js";
+import { intToHex } from "../utils/intToHex.js";
 
 export const parseInteractWord = (
     interactWord: InteractWordRaw
@@ -12,10 +12,10 @@ export const parseInteractWord = (
                 isActive: interactWord.data.fans_medal.is_lighted === 1,
                 name: interactWord.data.fans_medal.medal_name,
                 color: intToHex(interactWord.data.fans_medal.medal_color),
-                level: interactWord.data.fans_medal.medal_level,
-            },
+                level: interactWord.data.fans_medal.medal_level
+            }
         },
         timestamp: interactWord.data.timestamp,
-        color: interactWord.data.uname_color,
+        color: interactWord.data.uname_color
     };
 };
