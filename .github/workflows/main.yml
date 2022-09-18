@@ -1,0 +1,29 @@
+name: Main workflow
+
+on:
+  push:
+  pull_request:
+    
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Pcrab/pblive-lib/.github/workflows/prepare.yml
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [install]
+    steps:
+    - uses: Pcrab/pblive-lib/.github/workflows/build.yml
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: [install]
+    steps:
+    - uses: Pcrab/pblive-lib/.github/workflows/lint.yml
+
+  test:
+    runs-on: ubuntu-latest
+    needs: [install]
+    steps:
+    - uses: Pcrab/pblive-lib/.github/workflows/test.yml

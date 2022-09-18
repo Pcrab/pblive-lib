@@ -1,0 +1,13 @@
+name: Install dependencies
+
+on: 
+  workflow_call:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Prepare
+      uses: Pcrab/pblive-lib/.github/workflows/prepare.yml
+    - name: Check build errors
+      run: pnpm build
