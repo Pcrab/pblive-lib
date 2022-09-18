@@ -5,9 +5,6 @@ on:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Prepare
-      uses: Pcrab/pblive-lib/.github/workflows/prepare.yml@main
-    - name: Check code style
-      run: pnpm lint
+    uses: Pcrab/pblive-lib/.github/workflows/prepare.yml@main
+    with:
+      action: 'lint'

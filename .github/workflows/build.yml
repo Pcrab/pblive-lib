@@ -5,9 +5,6 @@ on:
 
 jobs:
   install:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Prepare
-      uses: Pcrab/pblive-lib/.github/workflows/prepare.yml@main
-    - name: Check build errors
-      run: pnpm build
+    uses: Pcrab/pblive-lib/.github/workflows/prepare.yml@main
+    with:
+      action: 'build'
