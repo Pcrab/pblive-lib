@@ -6,24 +6,16 @@ on:
     
 jobs:
   install:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: Pcrab/pblive-lib/.github/workflows/prepare.yml
+    uses: Pcrab/pblive-lib/.github/workflows/prepare.yml@main
 
   build:
-    runs-on: ubuntu-latest
+    uses: Pcrab/pblive-lib/.github/workflows/build.yml@main
     needs: [install]
-    steps:
-    - uses: Pcrab/pblive-lib/.github/workflows/build.yml
 
   lint:
-    runs-on: ubuntu-latest
+    uses: Pcrab/pblive-lib/.github/workflows/lint.yml@main
     needs: [install]
-    steps:
-    - uses: Pcrab/pblive-lib/.github/workflows/lint.yml
 
   test:
-    runs-on: ubuntu-latest
+    uses: Pcrab/pblive-lib/.github/workflows/test.yml@main
     needs: [install]
-    steps:
-    - uses: Pcrab/pblive-lib/.github/workflows/test.yml
