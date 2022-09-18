@@ -38,7 +38,8 @@
         "build": "unbuild",
         "check": "tsc --noEmit",
         "dev": "unbuild --stub",
-        "format": "eslint src --fix",
+        "lint:fix": "eslint src --fix",
+        "lint": "eslint src",
         "test": "jest"
     },
     "devDependencies": {
