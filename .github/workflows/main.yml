@@ -7,16 +7,16 @@ on:
     
 jobs:
   install:
-    uses: ./.github/workflows/prepare.yml@main
+    uses: ./.github/workflows/prepare.yml
 
   build:
-    uses: ./.github/workflows/build.yml@main
+    uses: ./.github/workflows/build.yml
     needs: [install]
 
   lint:
-    uses: ./.github/workflows/lint.yml@main
+    uses: ./.github/workflows/lint.yml
     needs: [install]
 
   test:
-    uses: ./.github/workflows/test.yml@main
+    uses: ./.github/workflows/test.yml
     needs: [install]
