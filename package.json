@@ -4,7 +4,12 @@
     "description": "A simple bilibili live danmu lib",
     "license": "MIT",
     "type": "module",
-    "keywords": [],
+    "keywords": [
+        "bilibili"
+    ],
+    "homepage": "https://github.com/Pcrab/pblive-lib#readme",
+    "bugs": "https://github.com/Pcrab/pblive-lib/issues",
+    "repository": "github:Pcrab/pblive-lib",
     "author": {
         "name": "Pcrab",
         "email": "pcrab@pcrab.xyz",
