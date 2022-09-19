@@ -7,16 +7,16 @@ on:
     
 jobs:
   install:
-    uses: Pcrab/pblive-lib/.github/workflows/prepare.yml@main
+    uses: ./.github/workflows/prepare.yml@main
 
   build:
-    uses: Pcrab/pblive-lib/.github/workflows/build.yml@main
+    uses: ./.github/workflows/build.yml@main
     needs: [install]
 
   lint:
-    uses: Pcrab/pblive-lib/.github/workflows/lint.yml@main
+    uses: ./.github/workflows/lint.yml@main
     needs: [install]
 
   test:
-    uses: Pcrab/pblive-lib/.github/workflows/test.yml@main
+    uses: ./.github/workflows/test.yml@main
     needs: [install]
