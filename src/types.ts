@@ -1,4 +1,4 @@
-interface BaseBadge {
+export interface BaseBadge {
     isActive: boolean;
     name: string;
     color: string;
@@ -6,7 +6,7 @@ interface BaseBadge {
     guard_level: number;
 }
 
-interface DanmuBadge extends BaseBadge {
+export interface DanmuBadge extends BaseBadge {
     anchor: {
         uid: number;
         username: string;
@@ -14,18 +14,18 @@ interface DanmuBadge extends BaseBadge {
     };
 }
 
-interface Identity {
+export interface Identity {
     rank: number;
     member: number;
     isAdmin: boolean;
 }
 
-interface BaseUser {
+export interface BaseUser {
     uid: number;
     username: string;
 }
 
-interface DanmuUser extends BaseUser {
+export interface DanmuUser extends BaseUser {
     badge: DanmuBadge | undefined;
     identity: Identity;
 }
@@ -147,7 +147,7 @@ export interface InteractWordRaw {
     };
 }
 
-interface InteractWordUser extends BaseUser {
+export interface InteractWordUser extends BaseUser {
     badge: BaseBadge;
 }
 

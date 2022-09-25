@@ -1,11 +1,16 @@
 import { KeepLiveTCP } from "bilibili-live-ws";
 import parser from "./parser/index.js";
 import {
+    Danmu,
     DanmuRaw,
+    HotRankChanged,
     HotRankChangedRaw,
+    InteractWord,
     InteractWordRaw,
     MsgHandlers,
+    SendGift,
     SendGiftRaw,
+    WatchedChange,
     WatchedChangeRaw,
 } from "./types.js";
 
@@ -41,3 +46,11 @@ const open = (roomId: number, handlers?: MsgHandlers): void => {
 };
 
 export default open;
+
+export {
+    type Danmu,
+    type InteractWord,
+    type SendGift,
+    type WatchedChange,
+    type HotRankChanged,
+};
