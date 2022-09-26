@@ -45,7 +45,8 @@
         "dev": "unbuild --stub",
         "lint:fix": "eslint src --fix",
         "lint": "eslint src",
-        "test": "jest"
+        "test": "jest",
+        "prepublishOnly": "pnpm check && pnpm test && pnpm build"
     },
     "devDependencies": {
         "@types/jest": "^29.0.3",
