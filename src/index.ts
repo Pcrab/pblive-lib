@@ -10,6 +10,7 @@ import {
     MsgHandlers,
     SendGift,
     SendGiftRaw,
+    SuperChatMessageRaw,
     WatchedChange,
     WatchedChangeRaw,
 } from "./types.js";
@@ -39,6 +40,12 @@ const open = (roomId: number, handlers?: MsgHandlers): void => {
     live.on("HOT_RANK_CHANGED_V2", (hotRankChanged: HotRankChangedRaw) => {
         handlers?.onHotRankChanged?.(
             parser.parseHotRankChanged(hotRankChanged),
+        );
+    });
+
+    live.on("SUPER_CHAT_MESSAGE", (superChatMessage: SuperChatMessageRaw) => {
+        handlers?.onSuperChatMessage?.(
+            parser.parseSuperChatMessage(superChatMessage),
         );
     });
 

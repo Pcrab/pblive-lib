@@ -6,7 +6,7 @@ export interface BaseBadge {
     guard_level: number;
 }
 
-export interface DanmuBadge extends BaseBadge {
+export interface AnchorBadge extends BaseBadge {
     anchor: {
         uid: number;
         username: string;
@@ -26,7 +26,7 @@ export interface BaseUser {
 }
 
 export interface DanmuUser extends BaseUser {
-    badge: DanmuBadge | undefined;
+    badge: AnchorBadge | undefined;
     identity: Identity;
 }
 
@@ -299,6 +299,79 @@ export interface HotRankChanged {
     icon: string;
 }
 
+export interface SuperChatMessageRaw {
+    cmd: "SUPER_CHAT_MESSAGE";
+    data: {
+        background_bottom_color: string;
+        background_color: string;
+        background_color_end: string;
+        background_color_start: string;
+        background_icon: string;
+        background_image: string;
+        background_price_color: string;
+        color_point: number;
+        dmscore: number;
+        end_time: number;
+        gift: { gift_id: number; gift_name: string; num: number };
+        id: number;
+        is_ranked: number;
+        is_send_audit: number;
+        medal_info: {
+            anchor_roomid: number;
+            anchor_uname: string;
+            guard_level: number;
+            icon_id: number;
+            is_lighted: number;
+            medal_color: string;
+            medal_color_border: number;
+            medal_color_end: number;
+            medal_color_start: number;
+            medal_level: number;
+            medal_name: string;
+            special: string;
+            target_id: number;
+        };
+        message: string;
+        message_font_color: string;
+        message_trans: string;
+        price: number;
+        rate: number;
+        start_time: number;
+        time: number;
+        token: string;
+        trans_mark: number;
+        ts: number;
+        uid: number;
+        user_info: {
+            face: string;
+            face_frame: string;
+            guard_level: number;
+            is_main_vip: number;
+            is_svip: number;
+            is_vip: number;
+            level_color: string;
+            manager: number;
+            name_color: string;
+            title: string;
+            uname: string;
+            user_level: number;
+        };
+    };
+    roomid: number;
+}
+
+export interface SuperChatUser extends BaseUser {
+    badge: AnchorBadge | undefined;
+}
+
+export interface SuperChatMessage {
+    message: string;
+    price: number;
+    time: number;
+    color: string;
+    user: SuperChatUser;
+}
+
 type MsgHandler<T> = (msg: T) => void;
 
 export interface MsgHandlers {
@@ -308,4 +381,5 @@ export interface MsgHandlers {
     onSendGift?: MsgHandler<SendGift>;
     onWatchedChange?: MsgHandler<WatchedChange>;
     onHotRankChanged?: MsgHandler<HotRankChanged>;
+    onSuperChatMessage?: MsgHandler<SuperChatMessage>;
 }
