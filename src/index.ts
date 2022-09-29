@@ -10,6 +10,7 @@ import {
     MsgHandlers,
     SendGift,
     SendGiftRaw,
+    SuperChatMessage,
     SuperChatMessageRaw,
     WatchedChange,
     WatchedChangeRaw,
@@ -60,4 +61,5 @@ export {
     type SendGift,
     type WatchedChange,
     type HotRankChanged,
+    type SuperChatMessage,
 };
