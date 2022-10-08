@@ -372,14 +372,30 @@ export interface SuperChatMessage {
     user: SuperChatUser;
 }
 
-type MsgHandler<T> = (msg: T) => void;
+type MsgHandler<T, TRaw> = (msg: T, raw: TRaw) => void;
 
 export interface MsgHandlers {
-    onHeartBeat?: MsgHandler<number>;
-    onDanmuMsg?: MsgHandler<Danmu>;
-    onInteractWord?: MsgHandler<InteractWord>;
-    onSendGift?: MsgHandler<SendGift>;
-    onWatchedChange?: MsgHandler<WatchedChange>;
-    onHotRankChanged?: MsgHandler<HotRankChanged>;
-    onSuperChatMessage?: MsgHandler<SuperChatMessage>;
+    onHeartBeat?: MsgHandler<number, number>;
+    onDanmuMsg?: MsgHandler<Danmu, DanmuRaw>;
+    onInteractWord?: MsgHandler<InteractWord, InteractWordRaw>;
+    onSendGift?: MsgHandler<SendGift, SendGiftRaw>;
+    onWatchedChange?: MsgHandler<WatchedChange, WatchedChangeRaw>;
+    onHotRankChanged?: MsgHandler<HotRankChanged, HotRankChangedRaw>;
+    onSuperChatMessage?: MsgHandler<SuperChatMessage, SuperChatMessageRaw>;
+    onAllMsg?: MsgHandler<
+        | number
+        | Danmu
+        | InteractWord
+        | SendGift
+        | WatchedChange
+        | HotRankChanged
+        | SuperChatMessage,
+        | number
+        | DanmuRaw
+        | InteractWordRaw
+        | SendGiftRaw
+        | WatchedChangeRaw
+        | HotRankChangedRaw
+        | SuperChatMessageRaw
+    >;
 }
